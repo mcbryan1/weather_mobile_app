@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Text, StyleSheet, View, ActivityIndicator } from "react-native";
+import WeatherTemplate from "../components/WeatherTemplate";
 
 export default class WeatherScreen extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ export default class WeatherScreen extends Component {
     // } else {
      return(
          <View style={styles.container}>
-                <Text>llo</Text> 
+               <WeatherTemplate/>
          </View>
      )
     // }
