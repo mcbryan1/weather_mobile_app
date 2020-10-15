@@ -6,7 +6,7 @@ import avatar from "../assets/images/avatar.png";
 const HeaderOne = () => {
   return (
     <View style={styles.container}>
-      <View style={{ flexDirection: "row", marginVertical: 20 }}>
+      <View style={{ flexDirection: "row", marginVertical: 20, borderBottomColor: "#ccc" , borderBottomWidth: 0.2,paddingBottom: 5}}>
         <View></View>
         <View
           style={{
@@ -27,26 +27,26 @@ const HeaderOne = () => {
         <Ionicons
           name="ios-menu"
           size={30}
-          color="black"
+          color="#fff"
           style={{
             marginHorizontal: 20,
             paddingVertical: 5,
             paddingHorizontal: 8,
             elevation: 20,
-            backgroundColor: "#fff",
+            backgroundColor: "#1A1D26",
             borderRadius: 20,
           }}
         />
         <Ionicons
           name="ios-notifications-outline"
           size={30}
-          color="black"
+          color="#fff"
           style={{
             marginHorizontal: 20,
             paddingVertical: 5,
             paddingHorizontal: 8,
             elevation: 20,
-            backgroundColor: "#fff",
+            backgroundColor: "#1A1D26",
             borderRadius: 20,
           }}
         />

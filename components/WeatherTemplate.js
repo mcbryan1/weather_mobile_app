@@ -33,6 +33,10 @@ const WeatherTemplate = (props) => {
     longitude,
     latitude,
   } = props.currentData;
+
+  const { date, temp, descript } = props.forecastData1;
+  const { dates, tempera, desc } = props.forecastData2;
+  const { datee, temper, descri } = props.forecastData3;
   let [fontsLoaded, error] = useFonts({
     Regular: Quicksand_400Regular,
     ExtraBold: Quicksand_700Bold,
@@ -49,31 +53,60 @@ const WeatherTemplate = (props) => {
           <Text style={{ fontFamily: "Medium", fontSize: 30, color: "#fff" }}>
             {location},
           </Text>
-          <Text style={{ fontFamily: "ExtraBold", fontSize: 40 , color: "#fff"}}>
+          <Text
+            style={{ fontFamily: "ExtraBold", fontSize: 40, color: "#fff" }}
+          >
             {country}
           </Text>
-          <Text style={{ fontFamily: "Medium", fontSize: 17, color: "#ccc", marginBottom: 10 }}>
+          <Text
+            style={{
+              fontFamily: "Medium",
+              fontSize: 17,
+              color: "#ccc",
+              marginBottom: 10,
+            }}
+          >
             {date_time}
           </Text>
         </View>
         <View style={{ flex: 4 }}>
           <Text
-            style={{ fontFamily: "Medium", fontSize: 17, marginBottom: 5, color: "#ccc" }}
+            style={{
+              fontFamily: "Medium",
+              fontSize: 17,
+              marginBottom: 5,
+              color: "#ccc",
+            }}
           >
             {timezone}
           </Text>
           <Text
-            style={{ fontFamily: "Medium", fontSize: 17, marginBottom: 5, color: "#ccc" }}
+            style={{
+              fontFamily: "Medium",
+              fontSize: 17,
+              marginBottom: 5,
+              color: "#ccc",
+            }}
           >
             {city}
           </Text>
           <Text
-            style={{ fontFamily: "Medium", fontSize: 17, marginBottom: 5, color: "#ccc" }}
+            style={{
+              fontFamily: "Medium",
+              fontSize: 17,
+              marginBottom: 5,
+              color: "#ccc",
+            }}
           >
             Lat: {latitude}
           </Text>
           <Text
-            style={{ fontFamily: "Medium", fontSize: 17, marginBottom: 5, color: "#ccc" }}
+            style={{
+              fontFamily: "Medium",
+              fontSize: 17,
+              marginBottom: 5,
+              color: "#ccc",
+            }}
           >
             Lon: {longitude}
           </Text>
@@ -84,7 +117,7 @@ const WeatherTemplate = (props) => {
         <LinearGradient
           // Button Linear Gradient
           colors={["#AECDFF", "#5896FD"]}
-          style={{ borderRadius: 20, height: 170, elevation: 20 }}
+          style={{ borderRadius: 20, height: 165, elevation: 20 }}
         >
           <View
             style={{
@@ -159,7 +192,9 @@ const WeatherTemplate = (props) => {
         }}
       >
         <View style={{ flexDirection: "column", alignItems: "center" }}>
-          <Text style={{ fontFamily: "ExtraBold", fontSize: 15, color: "#fff" }}>
+          <Text
+            style={{ fontFamily: "ExtraBold", fontSize: 15, color: "#fff" }}
+          >
             Humidity
           </Text>
           <Image
@@ -177,7 +212,9 @@ const WeatherTemplate = (props) => {
           </Text>
         </View>
         <View style={{ flexDirection: "column", alignItems: "center" }}>
-          <Text style={{ fontFamily: "ExtraBold", fontSize: 15, color: "#fff" }}>
+          <Text
+            style={{ fontFamily: "ExtraBold", fontSize: 15, color: "#fff" }}
+          >
             Wind Speed
           </Text>
           <Image
@@ -195,7 +232,9 @@ const WeatherTemplate = (props) => {
           </Text>
         </View>
         <View style={{ flexDirection: "column", alignItems: "center" }}>
-          <Text style={{ fontFamily: "ExtraBold", fontSize: 15, color: "#fff" }}>
+          <Text
+            style={{ fontFamily: "ExtraBold", fontSize: 15, color: "#fff" }}
+          >
             Pressure
           </Text>
           <Image
@@ -208,7 +247,9 @@ const WeatherTemplate = (props) => {
               marginVertical: 5,
             }}
           />
-          <Text style={{ fontFamily: "Medium", fontSize: 16, color: "#fff" }}>{pressure}</Text>
+          <Text style={{ fontFamily: "Medium", fontSize: 16, color: "#fff" }}>
+            {pressure}
+          </Text>
         </View>
       </View>
 
@@ -233,42 +274,154 @@ const WeatherTemplate = (props) => {
                 color: "#5896Fd",
               }}
             >
-              Next 7 Days
+              Next 3 Days
             </Text>
           </TouchableOpacity>
         </View>
       </View>
       {/* ************** ForeCast Body *****************/}
-      <View style={{ marginHorizontal: 20, flexDirection: "row" }}>
+      <View style={{ marginHorizontal: 10, flexDirection: "row" }}>
+        {/**************************** * Day One ***************************/}
         <LinearGradient
           colors={["#B0A4FF", "#806EF8"]}
           style={{
-            borderRadius: 50,
+            borderRadius: 20,
             height: 120,
             elevation: 50,
-            width: 70,
+            width: 110,
             alignItems: "center",
+            marginRight: 5,
           }}
         >
-          <Image
-            source={presh}
-            style={{ height: 50, width: 50, marginTop: 5 }}
-          />
-          <Text
+          <View
             style={{
-              fontFamily: "ExtraBold",
-              color: "#fff",
-              marginBottom: 5,
-              fontSize: 18,
+              flexDirection: "row",
+              justifyContent: "center",
+              marginTop: 10,
             }}
           >
-            30˚c
-          </Text>
+            <Image
+              source={presh}
+              style={{ height: 50, width: 50, marginTop: 5 }}
+            />
+            <Text
+              style={{
+                fontFamily: "ExtraBold",
+                color: "#fff",
+                marginTop: 5,
+                fontSize: 23,
+              }}
+            >
+              {temp}˚c
+            </Text>
+          </View>
 
           <Text
-            style={{ fontFamily: "ExtraBold", color: "#fff", marginBottom: 5 }}
+            style={{ fontFamily: "ExtraBold", color: "#fff", marginTop: 0 }}
           >
-            Mon
+            {date}
+          </Text>
+          <Text
+            numberOfLines={1}
+            style={{ fontFamily: "ExtraBold", color: "#fff", marginTop: 5 }}
+          >
+            {descript}
+          </Text>
+        </LinearGradient>
+
+        {/**************************** * Day Two ***************************/}
+        <LinearGradient
+          colors={["#B0A4FF", "#806EF8"]}
+          style={{
+            borderRadius: 20,
+            height: 120,
+            elevation: 50,
+            width: 110,
+            alignItems: "center",
+            marginRight: 5,
+          }}
+        >
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              marginTop: 10,
+            }}
+          >
+            <Image
+              source={presh}
+              style={{ height: 50, width: 50, marginTop: 5 }}
+            />
+            <Text
+              style={{
+                fontFamily: "ExtraBold",
+                color: "#fff",
+                marginTop: 5,
+                fontSize: 23,
+              }}
+            >
+              {tempera}˚c
+            </Text>
+          </View>
+
+          <Text
+            style={{ fontFamily: "ExtraBold", color: "#fff", marginTop: 0 }}
+          >
+            {dates}
+          </Text>
+          <Text
+            numberOfLines={1}
+            style={{ fontFamily: "ExtraBold", color: "#fff", marginTop: 5 }}
+          >
+            {desc}
+          </Text>
+        </LinearGradient>
+
+        {/**************************** * Day Three ***************************/}
+        <LinearGradient
+          colors={["#B0A4FF", "#806EF8"]}
+          style={{
+            borderRadius: 20,
+            height: 120,
+            elevation: 50,
+            width: 110,
+            alignItems: "center",
+            marginRight: 5,
+          }}
+        >
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              marginTop: 10,
+            }}
+          >
+            <Image
+              source={presh}
+              style={{ height: 50, width: 50, marginTop: 5 }}
+            />
+            <Text
+              style={{
+                fontFamily: "ExtraBold",
+                color: "#fff",
+                marginTop: 5,
+                fontSize: 23,
+              }}
+            >
+             {temper}˚c
+            </Text>
+          </View>
+
+          <Text
+            style={{ fontFamily: "ExtraBold", color: "#fff", marginTop: 0 }}
+          >
+            {datee}
+          </Text>
+          <Text
+            numberOfLines={1}
+            style={{ fontFamily: "ExtraBold", color: "#fff", marginTop: 5 }}
+          >
+            {descri}
           </Text>
         </LinearGradient>
       </View>
