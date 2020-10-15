@@ -6,7 +6,7 @@ import Index from "./navigation/Index";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Index/>
+      <Index />
     </View>
   );
 }
@@ -14,5 +14,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    // backgroundColor: "#fff",
   },
 });
